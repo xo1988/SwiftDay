@@ -83,6 +83,7 @@
 		88F93BF02629739C00CC3AA8 = {
 			isa = PBXGroup;
 			children = (
+				88F93C3726297AE500CC3AA8 /* Source */,
 				88F93BFB2629739C00CC3AA8 /* SwiftDay */,
 				88F93C15262973A000CC3AA8 /* SwiftDayTests */,
 				88F93C20262973A000CC3AA8 /* SwiftDayUITests */,
@@ -105,7 +106,6 @@
 			children = (
 				88F93BFC2629739C00CC3AA8 /* AppDelegate.swift */,
 				88F93BFE2629739C00CC3AA8 /* SceneDelegate.swift */,
-				88F93C322629761000CC3AA8 /* SwiftDay.swift */,
 				88F93C002629739C00CC3AA8 /* ViewController.swift */,
 				88F93C022629739C00CC3AA8 /* Main.storyboard */,
 				88F93C08262973A000CC3AA8 /* Assets.xcassets */,
@@ -132,6 +132,14 @@
 				88F93C23262973A000CC3AA8 /* Info.plist */,
 			);
 			path = SwiftDayUITests;
+			sourceTree = "<group>";
+		};
+		88F93C3726297AE500CC3AA8 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				88F93C322629761000CC3AA8 /* SwiftDay.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
