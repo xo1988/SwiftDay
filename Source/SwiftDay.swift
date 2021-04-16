@@ -53,18 +53,18 @@ public class Day {
     private var dateformatter: DateFormatter = DateFormatter()
     
     // current time
-    init() {
+    public init() {
         self.innerDate = Date.init()
     }
     
     // init with day
-    init(anotherDay: Day) {
+    public init(anotherDay: Day) {
         self.innerDate = anotherDay.innerDate
         self.dateformatter = anotherDay.dateformatter
     }
     
     // init with timestamp
-    init(timestamp: Double) {
+    public init(timestamp: Double) {
         self.innerDate = Date.init(timeIntervalSince1970: TimeInterval(timestamp))
     }
     
@@ -78,7 +78,7 @@ public class Day {
     // yyyyMMddHHmm / yyyy-MM-dd HH:mm ~ 2021-01-02 03:04
     // yyyyMMddHHmmss / yyyy-MM-dd HH:mm:ss ~ 2021-01-02 03:04:05
     // yyyyMMddHHmmssSSS / yyyy-MM-dd HH:mm:ss.SSS ~ 2021-01-02 03:04:05.666
-    init(string: String) {
+    public init(string: String) {
         let _regex : NSRegularExpression = try! NSRegularExpression(pattern: REGEX_PARSE, options: [])
     
         let _matches : [NSTextCheckingResult] = _regex.matches(in: string, options: [], range: NSRange.init(location: 0, length: string.count))
@@ -110,13 +110,13 @@ public class Day {
     }
     
     // init with user string format
-    init(string : String, format : String) {
+    public init(string : String, format : String) {
         self.dateformatter.dateFormat = format
         self.innerDate = self.dateformatter.date(from: string)
     }
     
     // init with year, month, day, hour, minute, second, millisecond
-    init(year : Int,
+    public init(year : Int,
          month : Int = 0,
          day : Int = 0,
          hour : Int = 0,
