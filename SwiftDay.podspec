@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SwiftDay"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = " rewrite dayjs by swift"
   spec.description  = <<-DESC
   try to rewrite dayjs by swift, methods same as dayjs
