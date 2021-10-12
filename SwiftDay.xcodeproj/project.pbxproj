@@ -15,19 +15,11 @@
 		88F93C09262973A000CC3AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F93C08262973A000CC3AA8 /* Assets.xcassets */; };
 		88F93C0C262973A000CC3AA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F93C0A262973A000CC3AA8 /* LaunchScreen.storyboard */; };
 		88F93C17262973A000CC3AA8 /* SwiftDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C16262973A000CC3AA8 /* SwiftDayTests.swift */; };
-		88F93C22262973A000CC3AA8 /* SwiftDayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C21262973A000CC3AA8 /* SwiftDayUITests.swift */; };
 		88F93C332629761000CC3AA8 /* SwiftDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C322629761000CC3AA8 /* SwiftDay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		88F93C13262973A000CC3AA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88F93BF12629739C00CC3AA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88F93BF82629739C00CC3AA8;
-			remoteInfo = SwiftDay;
-		};
-		88F93C1E262973A000CC3AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88F93BF12629739C00CC3AA8 /* Project object */;
 			proxyType = 1;
@@ -49,9 +41,6 @@
 		88F93C12262973A000CC3AA8 /* SwiftDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F93C16262973A000CC3AA8 /* SwiftDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDayTests.swift; sourceTree = "<group>"; };
 		88F93C18262973A000CC3AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88F93C1D262973A000CC3AA8 /* SwiftDayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88F93C21262973A000CC3AA8 /* SwiftDayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDayUITests.swift; sourceTree = "<group>"; };
-		88F93C23262973A000CC3AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88F93C322629761000CC3AA8 /* SwiftDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88F93C1A262973A000CC3AA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +69,6 @@
 				88F93C3726297AE500CC3AA8 /* Source */,
 				88F93BFB2629739C00CC3AA8 /* SwiftDay */,
 				88F93C15262973A000CC3AA8 /* SwiftDayTests */,
-				88F93C20262973A000CC3AA8 /* SwiftDayUITests */,
 				88F93BFA2629739C00CC3AA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,7 +78,6 @@
 			children = (
 				88F93BF92629739C00CC3AA8 /* SwiftDay.app */,
 				88F93C12262973A000CC3AA8 /* SwiftDayTests.xctest */,
-				88F93C1D262973A000CC3AA8 /* SwiftDayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,15 +103,6 @@
 				88F93C18262973A000CC3AA8 /* Info.plist */,
 			);
 			path = SwiftDayTests;
-			sourceTree = "<group>";
-		};
-		88F93C20262973A000CC3AA8 /* SwiftDayUITests */ = {
-			isa = PBXGroup;
-			children = (
-				88F93C21262973A000CC3AA8 /* SwiftDayUITests.swift */,
-				88F93C23262973A000CC3AA8 /* Info.plist */,
-			);
-			path = SwiftDayUITests;
 			sourceTree = "<group>";
 		};
 		88F93C3726297AE500CC3AA8 /* Source */ = {
@@ -180,24 +151,6 @@
 			productReference = 88F93C12262973A000CC3AA8 /* SwiftDayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		88F93C1C262973A000CC3AA8 /* SwiftDayUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88F93C2C262973A000CC3AA8 /* Build configuration list for PBXNativeTarget "SwiftDayUITests" */;
-			buildPhases = (
-				88F93C19262973A000CC3AA8 /* Sources */,
-				88F93C1A262973A000CC3AA8 /* Frameworks */,
-				88F93C1B262973A000CC3AA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88F93C1F262973A000CC3AA8 /* PBXTargetDependency */,
-			);
-			name = SwiftDayUITests;
-			productName = SwiftDayUITests;
-			productReference = 88F93C1D262973A000CC3AA8 /* SwiftDayUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,10 +164,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					88F93C11262973A000CC3AA8 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 88F93BF82629739C00CC3AA8;
-					};
-					88F93C1C262973A000CC3AA8 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 88F93BF82629739C00CC3AA8;
 					};
@@ -235,7 +184,6 @@
 			targets = (
 				88F93BF82629739C00CC3AA8 /* SwiftDay */,
 				88F93C11262973A000CC3AA8 /* SwiftDayTests */,
-				88F93C1C262973A000CC3AA8 /* SwiftDayUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,13 +201,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		88F93C10262973A000CC3AA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88F93C1B262973A000CC3AA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,14 +229,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88F93C19262973A000CC3AA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88F93C22262973A000CC3AA8 /* SwiftDayUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -303,11 +236,6 @@
 			isa = PBXTargetDependency;
 			target = 88F93BF82629739C00CC3AA8 /* SwiftDay */;
 			targetProxy = 88F93C13262973A000CC3AA8 /* PBXContainerItemProxy */;
-		};
-		88F93C1F262973A000CC3AA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88F93BF82629739C00CC3AA8 /* SwiftDay */;
-			targetProxy = 88F93C1E262973A000CC3AA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -455,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WGYK8QPQM;
 				INFOPLIST_FILE = SwiftDay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,7 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WGYK8QPQM;
 				INFOPLIST_FILE = SwiftDay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,44 +457,6 @@
 			};
 			name = Release;
 		};
-		88F93C2D262973A000CC3AA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftDayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.163.evilwing001.SwiftDayUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftDay;
-			};
-			name = Debug;
-		};
-		88F93C2E262973A000CC3AA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftDayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.163.evilwing001.SwiftDayUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftDay;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,15 +483,6 @@
 			buildConfigurations = (
 				88F93C2A262973A000CC3AA8 /* Debug */,
 				88F93C2B262973A000CC3AA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		88F93C2C262973A000CC3AA8 /* Build configuration list for PBXNativeTarget "SwiftDayUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88F93C2D262973A000CC3AA8 /* Debug */,
-				88F93C2E262973A000CC3AA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
