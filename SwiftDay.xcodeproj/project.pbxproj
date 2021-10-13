@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8836C02427155A6700F4CDDE /* Package.swift in Resources */ = {isa = PBXBuildFile; fileRef = 8836C02327155A6700F4CDDE /* Package.swift */; };
+		8836C0302715800000F4CDDE /* InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8836C02F2715800000F4CDDE /* InitTests.swift */; };
+		888898CB2716841500E4D449 /* PropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888898CA2716841500E4D449 /* PropertyTests.swift */; };
+		888898CD2716A66A00E4D449 /* FuncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888898CC2716A66A00E4D449 /* FuncTests.swift */; };
 		88F93BFD2629739C00CC3AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93BFC2629739C00CC3AA8 /* AppDelegate.swift */; };
 		88F93C012629739C00CC3AA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C002629739C00CC3AA8 /* ViewController.swift */; };
 		88F93C042629739C00CC3AA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F93C022629739C00CC3AA8 /* Main.storyboard */; };
 		88F93C072629739C00CC3AA8 /* SwiftDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C052629739C00CC3AA8 /* SwiftDay.xcdatamodeld */; };
 		88F93C09262973A000CC3AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F93C08262973A000CC3AA8 /* Assets.xcassets */; };
 		88F93C0C262973A000CC3AA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F93C0A262973A000CC3AA8 /* LaunchScreen.storyboard */; };
-		88F93C17262973A000CC3AA8 /* SwiftDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C16262973A000CC3AA8 /* SwiftDayTests.swift */; };
 		88F93C332629761000CC3AA8 /* SwiftDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F93C322629761000CC3AA8 /* SwiftDay.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		8836C02327155A6700F4CDDE /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		8836C02F2715800000F4CDDE /* InitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitTests.swift; sourceTree = "<group>"; };
+		888898CA2716841500E4D449 /* PropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTests.swift; sourceTree = "<group>"; };
+		888898CC2716A66A00E4D449 /* FuncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncTests.swift; sourceTree = "<group>"; };
 		88F93BF92629739C00CC3AA8 /* SwiftDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F93BFC2629739C00CC3AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F93C002629739C00CC3AA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +44,6 @@
 		88F93C0B262973A000CC3AA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88F93C0D262973A000CC3AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88F93C12262973A000CC3AA8 /* SwiftDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88F93C16262973A000CC3AA8 /* SwiftDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDayTests.swift; sourceTree = "<group>"; };
 		88F93C18262973A000CC3AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88F93C322629761000CC3AA8 /* SwiftDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,13 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8836C02A2715698400F4CDDE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				88F93C18262973A000CC3AA8 /* Info.plist */,
+				88F93C15262973A000CC3AA8 /* SwiftDayTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		88F93BF02629739C00CC3AA8 = {
 			isa = PBXGroup;
 			children = (
 				8836C02327155A6700F4CDDE /* Package.swift */,
 				88F93C3726297AE500CC3AA8 /* Source */,
 				88F93BFB2629739C00CC3AA8 /* SwiftDay */,
-				88F93C15262973A000CC3AA8 /* SwiftDayTests */,
+				8836C02A2715698400F4CDDE /* Tests */,
 				88F93BFA2629739C00CC3AA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,8 +112,9 @@
 		88F93C15262973A000CC3AA8 /* SwiftDayTests */ = {
 			isa = PBXGroup;
 			children = (
-				88F93C16262973A000CC3AA8 /* SwiftDayTests.swift */,
-				88F93C18262973A000CC3AA8 /* Info.plist */,
+				8836C02F2715800000F4CDDE /* InitTests.swift */,
+				888898CA2716841500E4D449 /* PropertyTests.swift */,
+				888898CC2716A66A00E4D449 /* FuncTests.swift */,
 			);
 			path = SwiftDayTests;
 			sourceTree = "<group>";
@@ -225,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F93C17262973A000CC3AA8 /* SwiftDayTests.swift in Sources */,
+				888898CB2716841500E4D449 /* PropertyTests.swift in Sources */,
+				8836C0302715800000F4CDDE /* InitTests.swift in Sources */,
+				888898CD2716A66A00E4D449 /* FuncTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +437,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftDayTests/Info.plist;
+				DEVELOPMENT_TEAM = 2WGYK8QPQM;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +459,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftDayTests/Info.plist;
+				DEVELOPMENT_TEAM = 2WGYK8QPQM;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

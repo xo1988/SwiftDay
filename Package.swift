@@ -12,6 +12,5 @@ let package = Package(name: "SwiftDay",
                   targets: [.target(name: "SwiftDay",
                                     path: "Source"),
                             .testTarget(name: "SwiftDayTests",
-                                        dependencies: ["SwiftDay"],
-                                        path: "SwiftDayTests")],
+                                        dependencies: ["SwiftDay"])],
                   swiftLanguageVersions: [.v5])

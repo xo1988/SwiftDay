@@ -46,7 +46,7 @@ let INVALID_DATE_STRING : String = "Invalid Date"
 
 let REGEX_PARSE : String = "^(\\d{4})[-]?(\\d{1,2})?[-]?(\\d{0,2})[^0-9]*(\\d{1,2})?:?(\\d{1,2})?:?(\\d{1,2})?[.:]?(\\d+)?$"
 
-// MARK: class Day
+// MARK: -  class Day
 
 public class Day {
     private var innerDate : Date!
@@ -55,6 +55,11 @@ public class Day {
     // current time
     public init() {
         self.innerDate = Date.init()
+    }
+    
+    // init with date
+    public init(date: Date) {
+        self.innerDate = date
     }
     
     // init with day
@@ -102,7 +107,7 @@ public class Day {
             self.innerDate = Calendar.current.date(bySetting: .hour, value: _params[3], of: self.innerDate)
             self.innerDate = Calendar.current.date(bySetting: .minute, value: _params[4], of: self.innerDate)
             self.innerDate = Calendar.current.date(bySetting: .second, value: _params[5], of: self.innerDate)
-            self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: _params[6] * 1000000, of: self.innerDate)
+            self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: _params[6] * 1_000_000, of: self.innerDate)
         } else {
             self.dateformatter.dateFormat = FORMAT_DEFAULT
             self.innerDate = self.dateformatter.date(from: string)
@@ -117,8 +122,8 @@ public class Day {
     
     // init with year, month, day, hour, minute, second, millisecond
     public init(year : Int,
-         month : Int = 0,
-         day : Int = 0,
+         month : Int = 1,
+         day : Int = 1,
          hour : Int = 0,
          minute : Int = 0,
          second : Int = 0,
@@ -131,16 +136,16 @@ public class Day {
         self.innerDate = Calendar.current.date(bySetting: .hour, value: hour, of: self.innerDate)
         self.innerDate = Calendar.current.date(bySetting: .minute, value: minute, of: self.innerDate)
         self.innerDate = Calendar.current.date(bySetting: .second, value: second, of: self.innerDate)
-        self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: millisecond * 1000000, of: self.innerDate)
+        self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: millisecond * 1_000_000, of: self.innerDate)
     }
     
-    // MARK: property
+    // MARK: -  property
     public var millisecond: (Int) {
         get {
-            return Calendar.current.component(.nanosecond, from: self.innerDate) / 1000000
+            return Int(self.innerDate.timeIntervalSince1970 * 1000) % 1000
         }
         set (ns) {
-            self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: ns * 1000000, of: self.innerDate)
+            self.innerDate = Calendar.current.date(bySetting: .nanosecond, value: ns * 1_000_000, of: self.innerDate)
         }
     }
     
@@ -159,7 +164,7 @@ public class Day {
             return Calendar.current.component(.minute, from: self.innerDate)
         }
         set (m) {
-            self.innerDate = Calendar.current.date(bySetting: .second, value: m, of: self.innerDate)
+            self.innerDate = Calendar.current.date(bySetting: .minute, value: m, of: self.innerDate)
         }
     }
     
@@ -172,7 +177,7 @@ public class Day {
         }
     }
     
-    public var day: (Int) {
+    public var date: (Int) {
         get {
             return Calendar.current.component(.weekday, from: self.innerDate)
         }
@@ -181,7 +186,7 @@ public class Day {
         }
     }
     
-    public var date: (Int) {
+    public var day: (Int) {
         get {
             return Calendar.current.component(.day, from: self.innerDate)
         }
@@ -208,7 +213,7 @@ public class Day {
         }
     }
     
-    // MARK: func
+    // MARK: -  func
     public static func min(days : Day...) -> Day {
         var _d = days[0]
         
@@ -255,7 +260,7 @@ public class Day {
             _d.innerDate = Calendar.current.date(byAdding: .hour, value: delta, to: _d.innerDate)
             break
         case .day:
-            _d.innerDate = Calendar.current.date(byAdding: .weekday, value: delta, to: _d.innerDate)
+            _d.innerDate = Calendar.current.date(byAdding: .day, value: delta, to: _d.innerDate)
             break
         case .month:
             _d.innerDate = Calendar.current.date(byAdding: .month, value: delta, to: _d.innerDate)
@@ -264,10 +269,10 @@ public class Day {
             _d.innerDate = Calendar.current.date(byAdding: .year, value: delta, to: _d.innerDate)
             break
         case .millisecond:
-            _d.innerDate = Calendar.current.date(byAdding: .nanosecond, value: delta * 1000000, to: _d.innerDate)
+            _d.innerDate = Calendar.current.date(byAdding: .nanosecond, value: delta * 1_000_000, to: _d.innerDate)
             break
         case .date:
-            _d.innerDate = Calendar.current.date(byAdding: .day, value: delta, to: _d.innerDate)
+            _d.innerDate = Calendar.current.date(byAdding: .weekday, value: delta, to: _d.innerDate)
             break
         case .week:
             break
@@ -287,7 +292,7 @@ public class Day {
     public func startOf(unit: DayUnit) -> Day {
         let _year : Int = self.year
         var _month : Int = self.month
-        var _day : Int = self.date
+        var _day : Int = self.day
         var _hour : Int = self.hour
         var _minute : Int = self.minute
         var _second : Int = self.second
@@ -300,7 +305,7 @@ public class Day {
         case .month:
             _day = 1
             fallthrough
-        case .date:
+        case .day:
             _hour = 0
             fallthrough
         case .hour:
@@ -313,7 +318,7 @@ public class Day {
             _millisecond = 0
             fallthrough
         case .week: break
-        case .day: break
+        case .date: break
         case .millisecond: break
         case .quarter: break
         }
@@ -345,6 +350,8 @@ public class Day {
         case .hour:
             return _delta / Int(MILLISECONDS_A_HOUR)
         case .day:
+            return _delta / Int(MILLISECONDS_A_DAY)
+        case .date:
             break
         case .week:
             return _delta / Int(MILLISECONDS_A_MINUTE)
@@ -352,8 +359,6 @@ public class Day {
             return (self.year * 12 + self.month) - (anotherDay.year * 12 + anotherDay.month)
         case .year:
             return self.year - anotherDay.year
-        case .date:
-            return _delta / Int(MILLISECONDS_A_DAY)
         case .quarter:
             let _om = (self.year * 12 + self.month) / 3
             let _tm = (anotherDay.year * 12 + anotherDay.month) / 3
@@ -369,12 +374,15 @@ public class Day {
     
     // daysInMonth
     public func daysInMonth() -> Int {
-        return self.endOf(unit: .month).date
+        return self.endOf(unit: .month).day
     }
     
     // toDate
-    public func toDate() -> Date {
-        return Date.init(timeIntervalSince1970: self.innerDate.timeIntervalSince1970)
+    public func toDate() -> Date? {
+        if isValid() {
+            return Date.init(timeIntervalSince1970: self.innerDate.timeIntervalSince1970)
+        }
+        return nil
     }
     
     public func isBefore(anotherDay: Day) -> Bool {
@@ -396,14 +404,14 @@ public class Day {
     public func isSame(anotherDay: Day, unit: DayUnit) -> Bool {
         let _year0 = self.year
         var _month0 = self.month
-        var _date0 = self.date
+        var _day0 = self.day
         var _hour0 = self.hour
         var _minute0 = self.minute
         var _second0 = self.second
         var _millisecond0 = self.millisecond
         let _year1 = anotherDay.year
         var _month1 = anotherDay.month
-        var _date1 = anotherDay.date
+        var _day1 = anotherDay.day
         var _hour1 = anotherDay.hour
         var _minute1 = anotherDay.minute
         var _second1 = anotherDay.second
@@ -415,10 +423,10 @@ public class Day {
             _month1 = 1
             fallthrough
         case .month:
-            _date0 = 1
-            _date1 = 1
+            _day0 = 1
+            _day1 = 1
             fallthrough
-        case .date:
+        case .day:
             _hour0 = 0
             _hour1 = 0
             fallthrough
@@ -437,11 +445,11 @@ public class Day {
         case .millisecond: break
         case .week: break
         case .quarter: break
-        case .day: break
+        case .date: break
         }
         
-        let _d0 = Day.init(year: _year0, month: _month0, day: _date0, hour: _hour0, minute: _minute0, second: _second0, millisecond: _millisecond0)
-        let _d1 = Day.init(year: _year1, month: _month1, day: _date1, hour: _hour1, minute: _minute1, second: _second1, millisecond: _millisecond1)
+        let _d0 = Day.init(year: _year0, month: _month0, day: _day0, hour: _hour0, minute: _minute0, second: _second0, millisecond: _millisecond0)
+        let _d1 = Day.init(year: _year1, month: _month1, day: _day1, hour: _hour1, minute: _minute1, second: _second1, millisecond: _millisecond1)
         return _d0.isSame(anotherDay: _d1)
     }
     
@@ -466,7 +474,7 @@ public class Day {
         return true
     }
     
-    // MARK: format
+    // MARK: -  format
     
     public func format(format : String) -> String {
         dateformatter.dateFormat = format

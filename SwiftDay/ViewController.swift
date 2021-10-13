@@ -13,10 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        
-        var day = Day()
-        
-        print("day ", day.format())
     }
 }
 
