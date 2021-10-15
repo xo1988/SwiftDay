@@ -128,7 +128,7 @@ public class Day {
          minute : Int = 0,
          second : Int = 0,
          millisecond : Int = 0) {
-                
+        
         self.innerDate = Date(timeIntervalSince1970: TimeInterval(0))
         self.innerDate = Calendar.current.date(bySetting: .year, value: year, of: self.innerDate)
         self.innerDate = Calendar.current.date(bySetting: .month, value: month, of: self.innerDate)
@@ -238,12 +238,12 @@ public class Day {
         return _d
     }
     
-    public func valueOf() -> Int {
-        return Int(self.innerDate.timeIntervalSince1970 * MILLISECONDS_A_SECOND)
+    public func valueOf() -> Int64 {
+        return Int64(self.innerDate.timeIntervalSince1970 * MILLISECONDS_A_SECOND)
     }
     
-    public func unix() -> Int {
-        return Int(self.innerDate.timeIntervalSince1970)
+    public func unix() -> Int64 {
+        return Int64(self.innerDate.timeIntervalSince1970)
     }
     
     public func add(delta : Int, unit : DayUnit) -> Day {
@@ -337,7 +337,7 @@ public class Day {
     }
     
     // diff
-    public func diff(anotherDay : Day, unit : DayUnit) -> Int {
+    public func diff(anotherDay : Day, unit : DayUnit) -> Int64 {
         let _delta = valueOf() - anotherDay.valueOf()
         
         switch unit {
