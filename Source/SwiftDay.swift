@@ -242,8 +242,8 @@ public class Day {
         return Int64(self.innerDate.timeIntervalSince1970 * MILLISECONDS_A_SECOND)
     }
     
-    public func unix() -> Int64 {
-        return Int64(self.innerDate.timeIntervalSince1970)
+    public func unix() -> Int {
+        return Int(self.innerDate.timeIntervalSince1970)
     }
     
     public func add(delta : Int, unit : DayUnit) -> Day {
@@ -337,24 +337,24 @@ public class Day {
     }
     
     // diff
-    public func diff(anotherDay : Day, unit : DayUnit) -> Int64 {
-        let _delta = valueOf() - anotherDay.valueOf()
+    public func diff(anotherDay : Day, unit : DayUnit) -> Int {
+        let _delta = unix() - anotherDay.unix()
         
         switch unit {
         case .millisecond:
-            return _delta
+            break
         case .second:
-            return _delta / Int(MILLISECONDS_A_SECOND)
+            return _delta
         case .minute:
-            return _delta / Int(MILLISECONDS_A_MINUTE)
+            return _delta / Int(SECONDS_A_MINUTE)
         case .hour:
-            return _delta / Int(MILLISECONDS_A_HOUR)
+            return _delta / Int(SECONDS_A_HOUR)
         case .day:
-            return _delta / Int(MILLISECONDS_A_DAY)
+            return _delta / Int(SECONDS_A_DAY)
         case .date:
             break
         case .week:
-            return _delta / Int(MILLISECONDS_A_MINUTE)
+            return _delta / Int(SECONDS_A_MINUTE)
         case .month:
             return (self.year * 12 + self.month) - (anotherDay.year * 12 + anotherDay.month)
         case .year:
@@ -365,7 +365,7 @@ public class Day {
             return _om - _tm
         }
         
-        return _delta / Int(MILLISECONDS_A_SECOND)
+        return _delta
     }
     
     public func diff(anotherDay : Day) -> Int {
