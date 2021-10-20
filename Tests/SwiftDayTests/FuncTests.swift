@@ -72,6 +72,7 @@ class FuncTests: XCTestCase {
         XCTAssert(d1.diff(anotherDay: d2, unit: .year) == 0)
         XCTAssert(d1.diff(anotherDay: d2, unit: .month) == 0)
         XCTAssert(d1.diff(anotherDay: d2, unit: .day) == 0)
+        XCTAssert(d1.diff(anotherDay: d2, unit: .date) == 0)
         XCTAssert(d1.diff(anotherDay: d2, unit: .hour) == 0)
         XCTAssert(d1.diff(anotherDay: d2, unit: .minute) == -1)
         XCTAssert(d1.diff(anotherDay: d2, unit: .second) == -60)

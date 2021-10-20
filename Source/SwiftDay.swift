@@ -342,6 +342,7 @@ public class Day {
         
         switch unit {
         case .millisecond:
+            assert(false, "不支持使用毫秒，因为有部分版本会有整数越界导致的崩溃")
             break
         case .second:
             return _delta
@@ -352,7 +353,7 @@ public class Day {
         case .day:
             return _delta / Int(SECONDS_A_DAY)
         case .date:
-            break
+            return self.date - anotherDay.date
         case .week:
             return _delta / Int(SECONDS_A_MINUTE)
         case .month:
