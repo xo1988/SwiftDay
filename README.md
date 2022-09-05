@@ -1,6 +1,25 @@
 参考 day.js 设计，使用如下：
 
-###初始化
+### 集成
+
+**Swift Package Mananger**
+
+使用Swift Package Mananger安装SwiftDay，在Package.swift文件中加入以下内容：
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://gitee.com/xo1988/swift-day", from: "1.0.0"),
+    ]
+)
+```
+之后执行 swift build。
+
+### 初始化
+
 ```swift
 var d: Day
 d = Day.init()
@@ -24,6 +43,7 @@ XCTAssert(d.format(format: "yyyy-MM-dd HH:mm:ss.SSS") == "2021-10-10 10:10:10.01
 ```
 
 ### 属性
+
 ```swift
 let d = Day.init(year: 2021, month: 10, day: 10, hour: 10, minute: 10, second: 10, millisecond: 10)
 XCTAssert(d.year == 2021)
@@ -51,6 +71,7 @@ XCTAssert(d.millisecond == 11)
 ```
 
 ### 常用方法
+
 ```swift
 let d1 = Day.init(string: "2021-10-13 13:31:57", format: "yyyy-MM-dd HH:mm:ss") // 1634103117
 let d2 = Day.init(string: "2021-10-13 13:32:57", format: "yyyy-MM-dd HH:mm:ss")
