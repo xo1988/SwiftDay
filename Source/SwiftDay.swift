@@ -50,7 +50,12 @@ let REGEX_PARSE : String = "^(\\d{4})[-]?(\\d{1,2})?[-]?(\\d{0,2})[^0-9]*(\\d{1,
 
 public class Day {
     private var innerDate : Date!
-    private var dateformatter: DateFormatter = DateFormatter()
+    private lazy var dateformatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = NSLocale.system
+        formatter.calendar = Calendar.init(identifier: .iso8601)
+        return formatter
+    }()
     
     // current time
     public init() {
